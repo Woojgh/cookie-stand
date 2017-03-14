@@ -1,0 +1,16 @@
+body {
+  font-family: times;
+  color: cornsilk;
+  background-color: #ff4600;
+}
+div {
+  background-color: rgba(43,00, 23, .4);  
+}
+.highlight {
+  font-family: 'Creepster', cursive;
+  color: #ff4325;
+}
+.data {
+  font-family: verdana;
+  color: #1010e8;
+}
