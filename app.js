@@ -72,10 +72,10 @@ function Store(name, minCust, maxCust, avgCookCust) {
     tableBody.id = 'table-body';
   };
 randerHeader();
-for (var i = 0; i <allStores.length; i++) {
-  var thisStore = allStores[i];
-  thisStore.generateTableRow();
-}
+for (var i = 0; i < allStores.length; i++) {
+  //var thisStore = allStores[i];
+  allStores[i].generateTableRow();
+};
 // pike.createListRow();
 // seaTac.createListRow();
 // seaCenter.createListRow();
