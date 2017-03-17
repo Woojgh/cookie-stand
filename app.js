@@ -85,10 +85,10 @@ for (var i = 0; i < allStores.length; i++) {
 var form = document.getElementById('the-form');
  function createNewStore(event) {
   event.preventDefault();
-  var storeName = event.target.elements.name;
+  var storeName = event.target.elements.storename;
   var storeMin = event.target.elements.minCust;
   var storeMax = event.target.elements.maxCust;
-  var storeAvg = event.target.elements.avgCookCust;
+  var storeAvg = event.target.elements.avgCookies;
   if (maxCust < minCust) {
     alert('The max number of crusties should be larger then the min number of crusties.');
   } else {
