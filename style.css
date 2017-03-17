@@ -1,10 +1,5 @@
 body {
-  font-family: times;
-  color: cornsilk;
-  background-color: #ff4600;
-}
-div {
-  background-color: rgba(43,00, 23, .4);  
+    background-color: peru;
 }
 .highlight {
   font-family: 'Creepster', cursive;
@@ -13,4 +8,41 @@ div {
 .data {
   font-family: verdana;
   color: #1010e8;
+}
+header {
+  width: auto;
+  height: auto;
+  background-color: cornflowerblue;
+  border: 2px solid black;
+  border-radius: 24px;
+}
+
+img {
+  display: block;
+  margin: 10px auto 10px auto;
+
+}
+
+h1 {
+  text-align: center;
+  font-size: 4em;
+  font-family: 'Griffy', cursive;
+}
+
+table {
+  width: 80%;
+  margin: auto;
+  margin-top: 5px;
+  border: 2px solid black;
+  background-color: rgba(255, 235, 90, 0.9);
+}
+
+th {
+  font-size: 1.25em;
+}
+
+td {
+  border: 1px solid black;
+  text-align: center;
+  font-size: 2em;
 }
