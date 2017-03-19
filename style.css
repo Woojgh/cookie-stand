@@ -27,15 +27,20 @@ img.mainFIsh {
 img.notFound {
   width: auto;
 }
-li {
+li.navBar {
   display: inline;
   margin-right: 105px;
-  margin-left: 20px;
+  margin-left: 120px;
 }
 h1 {
   text-align: center;
   font-size: 4em;
   font-family: 'Griffy', cursive;
+  margin: auto;
+}
+h3 {
+  font-family: 'Griffy', cursive;
+  text-align: center;
 }
 
 table {
@@ -54,4 +59,14 @@ td {
   border: 1px solid black;
   text-align: center;
   font-size: 2em;
+}
+form {
+  font-family: 'Griffy', cursive;
+}
+img {
+  display: block;
+  margin: 0px auto;
+}
+img.navBar {
+  display: inline;
 }
