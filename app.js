@@ -40,7 +40,7 @@ function CookieStore(name, minCust, maxCust, avgCookCust) {
     tRow.appendChild(rowName);
     for(var i = 0; i < storeHours.length - 1; i++){
       var newTD= document.createElement('td');
-      newTD.innerText = this.hourlySales[i];
+      newTD.innerText = this.hourlySalesArray[i];
       tRow.appendChild(newTD);
     }
   };
@@ -62,55 +62,54 @@ function crumbleTable() {
   var tableBody = document.createElement('tBody');
   table.appendChild(tableBody);
   tableBody.id = 'table-body';
-};
+}
 crumbleTable();
 
 for (var i = 0; i < allStores.length; i++) {
   allStores[i].createListRow();
 }
 // function hourlyTotals() {
-//  var table = document.getElementById('table-body');
+//  var table = document.getElementById('table');
 //  var tableFoot = document.getElementById('tfoot');
-//  table.appndChild(tableFoot);
+//  table.appendChild(tableFoot);
 //  var tr = document.createElement('tr');
 //  tableFoot.appendChild(tr);
 //  var th = document.createElement('th');
 //  tr.appendChild(th);
 //  for (var i = 0; i < storeHours.length - 2; i++) {
 //    var hrlyTtl = 0;
-//    for (var z = 0; z < allStores.length; x++) {
-//      hrlyTtl += allStores[x].hourlySalesArray[i];
+//    for (var z = 0; z < allStores.length; z++) {
+//      hrlyTtl += allStores[z].hourlySalesArray[i];
 //    }
 //    var footTD = document.createElement('td');
 //    footTD.innerText = hrlyTtl;
 //    tr.appendChild(footTD);
 //  }
 //  var allTotals = 0;
-//  for (var i = 0; i < allStores.length; i++) {
+//  for (var j = 0; j < allStores.length; j++) {
 //    allTotals += allStores[i].total;
 //  }
 //  var totalTD = document.createElement('td');
 //  totalTD.innerText = allTotals;
 //  tr.appendChild(totalTD)
+// }
 
-// } 
-// for (var i = 0; i < allStores.length; i++) {
-//   allStores[i].createListRow();
-// }
 // hourlyTotals();
-// var form = document.getElementById('the-form');
-// function createNewStore(event) {
-//  event.preventDefault();
-//    var storeName = event.target.elements.storename;
-//    var storeMin = event.target.elements.minCust;
-//    var storeMax = event.target.elements.maxCust;
-//    var storeAvg = event.target.elements.avgCookies;
-//    if (maxCust < minCust) {
-//      alert('The max number of crusties should be larger then the min number of crusties.');
-//    } else {
-//      var submitStore = new CookieStore(name.value, Math.floor(minCust.value), Math.floor(maxCust.value), Math.floor(avgCookCust.value);
-//      createListRow(CookieStore);
-//      form.reset();
-//    }
-// }
-// form.addEventListener('submit', createNewStore);
+
+
+var form = document.getElementById('the-form');
+function createNewStore(event) {
+ event.preventDefault();
+   var name = event.target.elements.storeName;
+   var minCust = event.target.elements.minCust;
+   var maxCust = event.target.elements.maxCust;
+   var storeAvg = event.target.elements.avgCookies;
+   if (maxCust < minCust) {
+     alert('The max number of crusties should not be larger then the min number of crusties.');
+   } else {
+     var newStore = new CookieStore(name.value, Math.floor(minCust.value), Math.floor(maxCust.value), storeAvg.value);
+     allStores[newStore];
+     form.reset();
+   }
+}
+form.addEventListener('submit', createNewStore);
