@@ -108,7 +108,7 @@ function createNewStore(event) {
      alert('The max number of crusties should not be larger then the min number of crusties.');
    } else {
      var newStore = new CookieStore(name.value, Math.floor(minCust.value), Math.floor(maxCust.value), storeAvg.value);
-     allStores[newStore];
+     allStores[i].createListRow(newStore);
      form.reset();
    }
 }
