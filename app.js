@@ -2,7 +2,7 @@
 //I wanted to use randomCustPerHour instead of my function.
 //var randomCustPerHour = Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
 //var avgCookHour =
-var body = document.getElementByTagName('body')[0];
+var body = document.getElementById('body')[0];
 var total = 0;
 var storeHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '8pm', 'total'];
 
@@ -16,9 +16,9 @@ var pike = {
     return Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
   },
   cookiesHourly: function() {
-    var cookiesPerHour = Math.floor(this.avgCookCust * this.random());
+    var cookiesPerHour = Math.floor(this.avgCookCust * this.randomCust());
     for(var i = 0; i < storeHours.length - 1; i++) {
-      this.hourlySales.push(Math.floor(cookiesPerHour);
+      this.hourlySales.push(Math.floor(cookiesPerHour));
       total += cookiesPerHour;
     }
     this.hourlySales.push(total);
@@ -38,7 +38,6 @@ var pike = {
   }
 };
 
-pike.createListItems();
 var seaTac = {
   minCust: 3,
   maxCust: 24,
@@ -50,7 +49,7 @@ var seaTac = {
   cookiesHourly: function() {
     var cookiesPerHour = Math.floor(this.avgCookCust * this.random());
     for(var i = 0; i < storeHours.length - 1; i++) {
-      this.hourlySales.push(Math.floor(cookiesPerHour);
+      this.hourlySales.push(Math.floor(cookiesPerHour));
       total += cookiesPerHour;
     }
     this.hourlySales.push(total);
@@ -81,7 +80,7 @@ var seaCenter = {
   cookiesHourly: function() {
     var cookiesPerHour = Math.floor(this.avgCookCust * this.random());
     for(var i = 0; i < storeHours.length - 1; i++) {
-      this.hourlySales.push(Math.floor(cookiesPerHour);
+      this.hourlySales.push(Math.floor(cookiesPerHour));
       total += cookiesPerHour;
     }
     this.hourlySales.push(total);
@@ -99,7 +98,6 @@ var seaCenter = {
     }
     body.appendChild(firstUl);
   }
-  seaCenter.createListItems();
 }
 
 var capHill = {
@@ -114,7 +112,7 @@ var capHill = {
   cookiesHourly: function() {
     var cookiesPerHour = Math.floor(this.avgCookCust * this.random());
     for(var i = 0; i < storeHours.length - 1; i++) {
-      this.hourlySales.push(Math.floor(cookiesPerHour);
+      this.hourlySales.push(Math.floor(cookiesPerHour));
       total += cookiesPerHour;
     }
     this.hourlySales.push(total);
@@ -132,7 +130,6 @@ var capHill = {
     }
     body.appendChild(firstUl);
   }
-  capHill.createListItems();
 }
 
 var alki = {
@@ -146,7 +143,7 @@ var alki = {
   cookiesHourly: function() {
     var cookiesPerHour = Math.floor(this.avgCookCust * this.random());
     for(var i = 0; i < storeHours.length - 1; i++) {
-      this.hourlySales.push(Math.floor(cookiesPerHour);
+      this.hourlySales.push(Math.floor(cookiesPerHour));
       total += cookiesPerHour;
     }
     this.hourlySales.push(total);
@@ -164,5 +161,4 @@ var alki = {
     }
     body.appendChild(firstUl);
   }
-  alki.createListItems();
 }
