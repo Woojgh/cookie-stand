@@ -20,8 +20,8 @@ function CookieStore(name, minCust, maxCust, avgCookCust) {
   this.randomCust = function() {
     return Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
   };
-  
-  
+
+
   this.totalSales = function() {
     for (var i = 0; i < storeHours.length; i++){
       var allTheCookies = Math.floor(this.randomCust() * this.avgCookCust);
@@ -31,7 +31,7 @@ function CookieStore(name, minCust, maxCust, avgCookCust) {
   };
   this.createListRow = function() {
     this.totalSales();
-    var table = document.getElementsByTagName('table')[0];    
+    var table = document.getElementsByTagName('table')[0];
     var tRow = document.createElement('tr');
     var tableBody = document.getElementById('table-body');
     tableBody.appendChild(tRow);
@@ -68,48 +68,3 @@ crumbleTable();
 for (var i = 0; i < allStores.length; i++) {
   allStores[i].createListRow();
 }
-// function hourlyTotals() {
-//  var table = document.getElementById('table');
-//  var tableFoot = document.getElementById('tfoot');
-//  table.appendChild(tableFoot);
-//  var tr = document.createElement('tr');
-//  tableFoot.appendChild(tr);
-//  var th = document.createElement('th');
-//  tr.appendChild(th);
-//  for (var i = 0; i < storeHours.length - 2; i++) {
-//    var hrlyTtl = 0;
-//    for (var z = 0; z < allStores.length; z++) {
-//      hrlyTtl += allStores[z].hourlySalesArray[i];
-//    }
-//    var footTD = document.createElement('td');
-//    footTD.innerText = hrlyTtl;
-//    tr.appendChild(footTD);
-//  }
-//  var allTotals = 0;
-//  for (var j = 0; j < allStores.length; j++) {
-//    allTotals += allStores[i].total;
-//  }
-//  var totalTD = document.createElement('td');
-//  totalTD.innerText = allTotals;
-//  tr.appendChild(totalTD)
-// }
-
-// hourlyTotals();
-
-
-var form = document.getElementById('the-form');
-function createNewStore(event) {
- event.preventDefault();
-   var name = event.target.elements.storeName;
-   var minCust = event.target.elements.minCust;
-   var maxCust = event.target.elements.maxCust;
-   var storeAvg = event.target.elements.avgCookies;
-   if (maxCust < minCust) {
-     alert('The max number of crusties should not be larger then the min number of crusties.');
-   } else {
-     var newStore = new CookieStore(name.value, Math.floor(minCust.value), Math.floor(maxCust.value), storeAvg.value);
-     allStores[i].createListRow(newStore);
-     form.reset();
-   }
-}
-form.addEventListener('submit', createNewStore);
